@@ -1,0 +1,23 @@
+# compile-train-graphs --read-disambig-syms=data/lang/phones/disambig.int exp/tri3b_ali_train_clean_5/tree exp/tri3b_ali_train_clean_5/final.mdl data/lang/L.fst "ark:utils/sym2int.pl --map-oov 3 -f 2- data/lang/words.txt data/train_clean_5/split5/1/text|" "ark:|gzip -c >exp/tri3b_ali_train_clean_5/fsts.1.gz" 
+# Started at Thu Mar 11 10:48:24 UTC 2021
+#
+compile-train-graphs --read-disambig-syms=data/lang/phones/disambig.int exp/tri3b_ali_train_clean_5/tree exp/tri3b_ali_train_clean_5/final.mdl data/lang/L.fst 'ark:utils/sym2int.pl --map-oov 3 -f 2- data/lang/words.txt data/train_clean_5/split5/1/text|' 'ark:|gzip -c >exp/tri3b_ali_train_clean_5/fsts.1.gz' 
+sym2int.pl: replacing PEZARA with 3
+sym2int.pl: replacing PUFFIER with 3
+sym2int.pl: replacing SPIRITUALISES with 3
+sym2int.pl: replacing DESINTERESSE with 3
+sym2int.pl: replacing UNEGOISTIC with 3
+sym2int.pl: replacing UNEGOISTIC with 3
+sym2int.pl: replacing UGLIFYING with 3
+sym2int.pl: replacing DOCUMENTARILY with 3
+sym2int.pl: replacing BAROCCO with 3
+sym2int.pl: replacing PARODISTS with 3
+sym2int.pl: replacing GOLDENNESS with 3
+sym2int.pl: replacing NAIVETES with 3
+sym2int.pl: replacing MISFORTUNED with 3
+sym2int.pl: replacing NAIVETES with 3
+sym2int.pl: replacing HONESTY' with 3
+** Replaced 15 instances of OOVs with 3
+LOG (compile-train-graphs[5.5.0~1-40c7]:main():compile-train-graphs.cc:147) compile-train-graphs: succeeded for 285 graphs, failed for 0
+# Accounting: time=3 threads=1
+# Ended (code 0) at Thu Mar 11 10:48:27 UTC 2021, elapsed time 3 seconds

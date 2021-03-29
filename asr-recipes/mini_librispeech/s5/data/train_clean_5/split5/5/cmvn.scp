@@ -1,0 +1,5 @@
+6848-252323 /opt/kaldi/egs/mini_librispeech/s5/mfcc/cmvn_train_clean_5.ark:6011
+7312-92432 /opt/kaldi/egs/mini_librispeech/s5/mfcc/cmvn_train_clean_5.ark:6261
+7367-86737 /opt/kaldi/egs/mini_librispeech/s5/mfcc/cmvn_train_clean_5.ark:6511
+7859-102519 /opt/kaldi/egs/mini_librispeech/s5/mfcc/cmvn_train_clean_5.ark:6762
+8629-261139 /opt/kaldi/egs/mini_librispeech/s5/mfcc/cmvn_train_clean_5.ark:7013

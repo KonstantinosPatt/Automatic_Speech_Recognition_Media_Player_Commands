@@ -1,0 +1,29 @@
+# compile-train-graphs --read-disambig-syms=data/lang_nosp/phones/disambig.int exp/mono/tree exp/mono/0.mdl data/lang_nosp/L.fst "ark:sym2int.pl --map-oov 3 -f 2- data/lang_nosp/words.txt < data/train_500short/split5/5/text|" "ark:|gzip -c >exp/mono/fsts.5.gz" 
+# Started at Thu Mar 11 10:36:50 UTC 2021
+#
+compile-train-graphs --read-disambig-syms=data/lang_nosp/phones/disambig.int exp/mono/tree exp/mono/0.mdl data/lang_nosp/L.fst 'ark:sym2int.pl --map-oov 3 -f 2- data/lang_nosp/words.txt < data/train_500short/split5/5/text|' 'ark:|gzip -c >exp/mono/fsts.5.gz' 
+sym2int.pl: replacing PULCHINELLOS with 3
+sym2int.pl: replacing PASTRINI with 3
+sym2int.pl: replacing PASTRINI with 3
+sym2int.pl: replacing PASTRINI with 3
+sym2int.pl: replacing PASTRINI with 3
+sym2int.pl: replacing PASTRINI with 3
+sym2int.pl: replacing AMASINE with 3
+sym2int.pl: replacing JUPERNO with 3
+sym2int.pl: replacing CUCUMETTO with 3
+sym2int.pl: replacing CUCUMETTO with 3
+sym2int.pl: replacing CUCUMETTO with 3
+sym2int.pl: replacing ENTREATIES' with 3
+sym2int.pl: replacing DIOVOLACCIO with 3
+sym2int.pl: replacing DIAVOLACCIO with 3
+sym2int.pl: replacing CUCUMETTO with 3
+sym2int.pl: replacing ABDALMALIK with 3
+sym2int.pl: replacing CATHISMA with 3
+sym2int.pl: replacing PHILIPPICUS with 3
+sym2int.pl: replacing PHILIPPICUS with 3
+sym2int.pl: replacing ADRAMMYTIUM with 3
+sym2int.pl: not warning for OOVs any more times
+** Replaced 20 instances of OOVs with 3
+LOG (compile-train-graphs[5.5.0~1-40c7]:main():compile-train-graphs.cc:147) compile-train-graphs: succeeded for 109 graphs, failed for 0
+# Accounting: time=0 threads=1
+# Ended (code 0) at Thu Mar 11 10:36:50 UTC 2021, elapsed time 0 seconds

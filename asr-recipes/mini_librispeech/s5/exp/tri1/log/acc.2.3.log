@@ -1,0 +1,17 @@
+# gmm-acc-stats-ali exp/tri1/2.mdl "ark,s,cs:apply-cmvn  --utt2spk=ark:data/train_clean_5/split5/3/utt2spk scp:data/train_clean_5/split5/3/cmvn.scp scp:data/train_clean_5/split5/3/feats.scp ark:- | add-deltas  ark:- ark:- |" "ark,s,cs:gunzip -c exp/tri1/ali.3.gz|" exp/tri1/2.3.acc 
+# Started at Thu Mar 11 10:38:11 UTC 2021
+#
+gmm-acc-stats-ali exp/tri1/2.mdl 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/train_clean_5/split5/3/utt2spk scp:data/train_clean_5/split5/3/cmvn.scp scp:data/train_clean_5/split5/3/feats.scp ark:- | add-deltas  ark:- ark:- |' 'ark,s,cs:gunzip -c exp/tri1/ali.3.gz|' exp/tri1/2.3.acc 
+apply-cmvn --utt2spk=ark:data/train_clean_5/split5/3/utt2spk scp:data/train_clean_5/split5/3/cmvn.scp scp:data/train_clean_5/split5/3/feats.scp ark:- 
+add-deltas ark:- ark:- 
+LOG (gmm-acc-stats-ali[5.5.0~1-40c7]:main():gmm-acc-stats-ali.cc:105) Processed 50 utterances; for utterance 3242-8112-0029 avg. like is -100.183 over 1408 frames.
+LOG (gmm-acc-stats-ali[5.5.0~1-40c7]:main():gmm-acc-stats-ali.cc:105) Processed 100 utterances; for utterance 332-128985-0034 avg. like is -102.011 over 1523 frames.
+LOG (gmm-acc-stats-ali[5.5.0~1-40c7]:main():gmm-acc-stats-ali.cc:105) Processed 150 utterances; for utterance 332-128985-0084 avg. like is -99.532 over 1488 frames.
+LOG (gmm-acc-stats-ali[5.5.0~1-40c7]:main():gmm-acc-stats-ali.cc:105) Processed 200 utterances; for utterance 3526-176653-0045 avg. like is -107.832 over 1349 frames.
+LOG (gmm-acc-stats-ali[5.5.0~1-40c7]:main():gmm-acc-stats-ali.cc:105) Processed 250 utterances; for utterance 3947-13262-0003 avg. like is -99.7951 over 1416 frames.
+LOG (apply-cmvn[5.5.0~1-40c7]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 298 utterances, errors on 0
+LOG (gmm-acc-stats-ali[5.5.0~1-40c7]:main():gmm-acc-stats-ali.cc:112) Done 298 files, 0 with errors.
+LOG (gmm-acc-stats-ali[5.5.0~1-40c7]:main():gmm-acc-stats-ali.cc:115) Overall avg like per frame (Gaussian only) = -102.194 over 381286 frames.
+LOG (gmm-acc-stats-ali[5.5.0~1-40c7]:main():gmm-acc-stats-ali.cc:123) Written accs.
+# Accounting: time=0 threads=1
+# Ended (code 0) at Thu Mar 11 10:38:11 UTC 2021, elapsed time 0 seconds
