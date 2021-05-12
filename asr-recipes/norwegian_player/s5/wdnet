@@ -1,0 +1,176 @@
+VERSION=1.0
+N=53   L=121  
+I=0    W=!NULL               
+I=1    W=!NULL               
+I=2    W=SENT-START          
+I=3    W=ASTRID              
+I=4    W=SPILL               
+I=5    W=JOIK                
+I=6    W=MUSIK               
+I=7    W=!NULL               
+I=8    W=ROCK                
+I=9    W=MUSIK               
+I=10   W=RAP                 
+I=11   W=MUSIK               
+I=12   W=DANCE               
+I=13   W=MUSIK               
+I=14   W=KVAD                
+I=15   W=MUSIK               
+I=16   W=LEPROUS             
+I=17   W=ROXETTE             
+I=18   W=STAMATIS            
+I=19   W=GONIDIS             
+I=20   W=FREDERIC            
+I=21   W=CHOPIN              
+I=22   W=MADRUGADA           
+I=23   W=DARKTHRONE          
+I=24   W=A-HA                
+I=25   W=DONKEYBOY           
+I=26   W=ZYKLON-B            
+I=27   W=KIRSTEN             
+I=28   W=BR\303\205TEN       
+I=29   W=BERG                
+I=30   W=LYKKELIG            
+I=31   W=TRIST               
+I=32   W=TRIUMF              
+I=33   W=JUL                 
+I=34   W=P\303\205SKE        
+I=35   W=FESTEN              
+I=36   W=TILFELDIG           
+I=37   W=!NULL               
+I=38   W=H\303\230YT         
+I=39   W=STILLE              
+I=40   W=VOLUM               
+I=41   W=OPP                 
+I=42   W=NED                 
+I=43   W=SETT                
+I=44   W=P\303\205           
+I=45   W=PAUSE               
+I=46   W=HOPP                
+I=47   W=OVER                
+I=48   W=STOKK               
+I=49   W=GJENTA              
+I=50   W=TIDLIGERE           
+I=51   W=NESTE               
+I=52   W=SENT-END            
+J=0     S=52   E=1    
+J=1     S=0    E=2    
+J=2     S=2    E=3    
+J=3     S=2    E=4    
+J=4     S=3    E=4    
+J=5     S=4    E=5    
+J=6     S=5    E=6    
+J=7     S=6    E=7    
+J=8     S=9    E=7    
+J=9     S=11   E=7    
+J=10    S=13   E=7    
+J=11    S=15   E=7    
+J=12    S=16   E=7    
+J=13    S=17   E=7    
+J=14    S=19   E=7    
+J=15    S=21   E=7    
+J=16    S=22   E=7    
+J=17    S=23   E=7    
+J=18    S=24   E=7    
+J=19    S=25   E=7    
+J=20    S=26   E=7    
+J=21    S=29   E=7    
+J=22    S=30   E=7    
+J=23    S=31   E=7    
+J=24    S=32   E=7    
+J=25    S=33   E=7    
+J=26    S=34   E=7    
+J=27    S=35   E=7    
+J=28    S=4    E=8    
+J=29    S=8    E=9    
+J=30    S=4    E=10   
+J=31    S=10   E=11   
+J=32    S=4    E=12   
+J=33    S=12   E=13   
+J=34    S=4    E=14   
+J=35    S=14   E=15   
+J=36    S=4    E=16   
+J=37    S=4    E=17   
+J=38    S=4    E=18   
+J=39    S=4    E=19   
+J=40    S=18   E=19   
+J=41    S=4    E=20   
+J=42    S=4    E=21   
+J=43    S=20   E=21   
+J=44    S=4    E=22   
+J=45    S=4    E=23   
+J=46    S=4    E=24   
+J=47    S=4    E=25   
+J=48    S=4    E=26   
+J=49    S=4    E=27   
+J=50    S=27   E=28   
+J=51    S=28   E=29   
+J=52    S=4    E=30   
+J=53    S=4    E=31   
+J=54    S=4    E=32   
+J=55    S=4    E=33   
+J=56    S=4    E=34   
+J=57    S=4    E=35   
+J=58    S=4    E=36   
+J=59    S=5    E=36   
+J=60    S=7    E=36   
+J=61    S=8    E=36   
+J=62    S=10   E=36   
+J=63    S=12   E=36   
+J=64    S=14   E=36   
+J=65    S=18   E=36   
+J=66    S=36   E=37   
+J=67    S=38   E=37   
+J=68    S=39   E=37   
+J=69    S=41   E=37   
+J=70    S=42   E=37   
+J=71    S=45   E=37   
+J=72    S=47   E=37   
+J=73    S=48   E=37   
+J=74    S=49   E=37   
+J=75    S=50   E=37   
+J=76    S=51   E=37   
+J=77    S=4    E=38   
+J=78    S=5    E=38   
+J=79    S=7    E=38   
+J=80    S=8    E=38   
+J=81    S=10   E=38   
+J=82    S=12   E=38   
+J=83    S=14   E=38   
+J=84    S=18   E=38   
+J=85    S=4    E=39   
+J=86    S=5    E=39   
+J=87    S=7    E=39   
+J=88    S=8    E=39   
+J=89    S=10   E=39   
+J=90    S=12   E=39   
+J=91    S=14   E=39   
+J=92    S=18   E=39   
+J=93    S=2    E=40   
+J=94    S=3    E=40   
+J=95    S=40   E=41   
+J=96    S=40   E=42   
+J=97    S=2    E=43   
+J=98    S=3    E=43   
+J=99    S=43   E=44   
+J=100   S=44   E=45   
+J=101   S=2    E=46   
+J=102   S=3    E=46   
+J=103   S=46   E=47   
+J=104   S=2    E=48   
+J=105   S=3    E=48   
+J=106   S=2    E=49   
+J=107   S=3    E=49   
+J=108   S=2    E=50   
+J=109   S=3    E=50   
+J=110   S=2    E=51   
+J=111   S=3    E=51   
+J=112   S=4    E=52   
+J=113   S=5    E=52   
+J=114   S=7    E=52   
+J=115   S=8    E=52   
+J=116   S=10   E=52   
+J=117   S=12   E=52   
+J=118   S=14   E=52   
+J=119   S=18   E=52   
+J=120   S=37   E=52   
