@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Change this location to somewhere where you want to put the data.
-data=./corpus/
+data=./corpus/  
 
 data_url=www.openslr.org/resources/31
 lm_url=www.openslr.org/resources/11
