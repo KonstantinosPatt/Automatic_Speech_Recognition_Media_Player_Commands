@@ -1,0 +1,11 @@
+SIL SIL_B SIL_E SIL_I SIL_S SPN SPN_B SPN_E SPN_I SPN_S
+a_B a_E a_I a_S aɪ_B aɪ_E aɪ_I aɪ_S aʊ_B aʊ_E aʊ_I aʊ_S aː_B aː_E aː_I aː_S b_B b_E b_I b_S bː_B bː_E bː_I bː_S d_B d_E d_I d_S dː_B dː_E dː_I dː_S eː_B eː_E eː_I eː_S f_B f_E f_I f_S h_B h_E h_I h_S iː_B iː_E iː_I iː_S j_B j_E j_I j_S k_B k_E k_I k_S kː_B kː_E kː_I kː_S l_B l_E l_I l_S m_B m_E m_I m_S n_B n_E n_I n_S oː_B oː_E oː_I oː_S p_B p_E p_I p_S pː_B pː_E pː_I pː_S r_B r_E r_I r_S s_B s_E s_I s_S t_B t_E t_I t_S tː_B tː_E tː_I tː_S uː_B uː_E uː_I uː_S v_B v_E v_I v_S x_B x_E x_I x_S y_B y_E y_I y_S yː_B yː_E yː_I yː_S z_B z_E z_I z_S øy_B øy_E øy_I øy_S øː_B øː_E øː_I øː_S ŋ_B ŋ_E ŋ_I ŋ_S œ_B œ_E œ_I œ_S ɑ_B ɑ_E ɑ_I ɑ_S ɑɪ_B ɑɪ_E ɑɪ_I ɑɪ_S ɑː_B ɑː_E ɑː_I ɑː_S ɔ_B ɔ_E ɔ_I ɔ_S ɔɪ_B ɔɪ_E ɔɪ_I ɔɪ_S ə_B ə_E ə_I ə_S ɛ_B ɛ_E ɛ_I ɛ_S ɛː_B ɛː_E ɛː_I ɛː_S ɡ_B ɡ_E ɡ_I ɡ_S ɡː_B ɡː_E ɡː_I ɡː_S ɪ_B ɪ_E ɪ_I ɪ_S ʂ_B ʂ_E ʂ_I ʂ_S ʃ_B ʃ_E ʃ_I ʃ_S ʉ_B ʉ_E ʉ_I ʉ_S ʉɪ_B ʉɪ_E ʉɪ_I ʉɪ_S ʉː_B ʉː_E ʉː_I ʉː_S ʊ_B ʊ_E ʊ_I ʊ_S ʊː_B ʊː_E ʊː_I ʊː_S
+a_B aɪ_B aʊ_B aː_B b_B bː_B d_B dː_B eː_B f_B h_B iː_B j_B k_B kː_B l_B m_B n_B oː_B p_B pː_B r_B s_B t_B tː_B uː_B v_B x_B y_B yː_B z_B øy_B øː_B ŋ_B œ_B ɑ_B ɑɪ_B ɑː_B ɔ_B ɔɪ_B ə_B ɛ_B ɛː_B ɡ_B ɡː_B ɪ_B ʂ_B ʃ_B ʉ_B ʉɪ_B ʉː_B ʊ_B ʊː_B 
+a_E aɪ_E aʊ_E aː_E b_E bː_E d_E dː_E eː_E f_E h_E iː_E j_E k_E kː_E l_E m_E n_E oː_E p_E pː_E r_E s_E t_E tː_E uː_E v_E x_E y_E yː_E z_E øy_E øː_E ŋ_E œ_E ɑ_E ɑɪ_E ɑː_E ɔ_E ɔɪ_E ə_E ɛ_E ɛː_E ɡ_E ɡː_E ɪ_E ʂ_E ʃ_E ʉ_E ʉɪ_E ʉː_E ʊ_E ʊː_E 
+a_I aɪ_I aʊ_I aː_I b_I bː_I d_I dː_I eː_I f_I h_I iː_I j_I k_I kː_I l_I m_I n_I oː_I p_I pː_I r_I s_I t_I tː_I uː_I v_I x_I y_I yː_I z_I øy_I øː_I ŋ_I œ_I ɑ_I ɑɪ_I ɑː_I ɔ_I ɔɪ_I ə_I ɛ_I ɛː_I ɡ_I ɡː_I ɪ_I ʂ_I ʃ_I ʉ_I ʉɪ_I ʉː_I ʊ_I ʊː_I 
+a_S aɪ_S aʊ_S aː_S b_S bː_S d_S dː_S eː_S f_S h_S iː_S j_S k_S kː_S l_S m_S n_S oː_S p_S pː_S r_S s_S t_S tː_S uː_S v_S x_S y_S yː_S z_S øy_S øː_S ŋ_S œ_S ɑ_S ɑɪ_S ɑː_S ɔ_S ɔɪ_S ə_S ɛ_S ɛː_S ɡ_S ɡː_S ɪ_S ʂ_S ʃ_S ʉ_S ʉɪ_S ʉː_S ʊ_S ʊː_S 
+SIL SPN 
+SIL_B SPN_B 
+SIL_E SPN_E 
+SIL_I SPN_I 
+SIL_S SPN_S 
