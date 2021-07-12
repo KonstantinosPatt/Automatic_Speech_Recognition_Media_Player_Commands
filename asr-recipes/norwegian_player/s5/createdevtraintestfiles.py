@@ -52,9 +52,9 @@ print(len(text_list))
 print(len(utt2spk_list))
 print()
 
-train_num = 10000
-dev_num = 20000
-test_num = 25000
+train_num = 50000
+dev_num = 70000
+test_num = 75000
 
 counter = 0
 for i in wav_list:

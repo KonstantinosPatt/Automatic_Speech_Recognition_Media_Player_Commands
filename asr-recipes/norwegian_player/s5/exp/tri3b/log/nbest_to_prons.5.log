@@ -1,0 +1,11 @@
+# linear-to-nbest "ark:gunzip -c exp/tri3b/ali.5.gz|" "ark:sym2int.pl --map-oov 3 -f 2- data/lang_nosp/words.txt <data/train/split5/5/text |" "" "" ark:- | lattice-align-words data/lang_nosp/phones/word_boundary.int exp/tri3b/final.mdl ark:- ark:- | nbest-to-prons exp/tri3b/final.mdl ark:- "|gzip -c >exp/tri3b/prons.5.gz" 
+# Started at Mon Jul 12 20:03:52 UTC 2021
+#
+nbest-to-prons exp/tri3b/final.mdl ark:- '|gzip -c >exp/tri3b/prons.5.gz' 
+linear-to-nbest 'ark:gunzip -c exp/tri3b/ali.5.gz|' 'ark:sym2int.pl --map-oov 3 -f 2- data/lang_nosp/words.txt <data/train/split5/5/text |' '' '' ark:- 
+lattice-align-words data/lang_nosp/phones/word_boundary.int exp/tri3b/final.mdl ark:- ark:- 
+LOG (linear-to-nbest[5.5.0~1-40c7]:main():linear-to-nbest.cc:130) Done 9976 n-best entries ,0 had errors.
+LOG (lattice-align-words[5.5.0~1-40c7]:main():lattice-align-words.cc:125) Successfully aligned 9976 lattices; 0 had errors.
+LOG (nbest-to-prons[5.5.0~1-40c7]:main():nbest-to-prons.cc:119) Printed prons for 9976 linear lattices; 0 had errors.
+# Accounting: time=2 threads=1
+# Ended (code 0) at Mon Jul 12 20:03:54 UTC 2021, elapsed time 2 seconds

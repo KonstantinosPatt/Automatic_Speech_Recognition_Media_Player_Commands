@@ -1,0 +1,352 @@
+# lattice-determinize-pruned --acoustic-scale=0.083333 --beam=4.0 "ark:gunzip -c exp/tri3b/decode_tgmed_dev/lat.tmp.1.gz|" ark:- | lattice-to-post --acoustic-scale=0.083333 ark:- ark:- | weight-silence-post 0.01 1:2:3:4:5:6:7:8:9:10 exp/tri3b/final.mdl ark:- ark:- | gmm-est-fmllr --fmllr-update-type=full --spk2utt=ark:data/dev/split10/1/spk2utt exp/tri3b/final.mdl "ark,s,cs:apply-cmvn  --utt2spk=ark:data/dev/split10/1/utt2spk scp:data/dev/split10/1/cmvn.scp scp:data/dev/split10/1/feats.scp ark:- | splice-feats --left-context=3 --right-context=3 ark:- ark:- | transform-feats exp/tri3b/final.mat ark:- ark:- | transform-feats --utt2spk=ark:data/dev/split10/1/utt2spk ark:exp/tri3b/decode_tgmed_dev/pre_trans.1 ark:- ark:- |" ark,s,cs:- ark:exp/tri3b/decode_tgmed_dev/trans_tmp.1 && compose-transforms --b-is-affine=true ark:exp/tri3b/decode_tgmed_dev/trans_tmp.1 ark:exp/tri3b/decode_tgmed_dev/pre_trans.1 ark:exp/tri3b/decode_tgmed_dev/trans.1 
+# Started at Mon Jul 12 20:38:30 UTC 2021
+#
+lattice-to-post --acoustic-scale=0.083333 ark:- ark:- 
+weight-silence-post 0.01 1:2:3:4:5:6:7:8:9:10 exp/tri3b/final.mdl ark:- ark:- 
+gmm-est-fmllr --fmllr-update-type=full --spk2utt=ark:data/dev/split10/1/spk2utt exp/tri3b/final.mdl 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/dev/split10/1/utt2spk scp:data/dev/split10/1/cmvn.scp scp:data/dev/split10/1/feats.scp ark:- | splice-feats --left-context=3 --right-context=3 ark:- ark:- | transform-feats exp/tri3b/final.mat ark:- ark:- | transform-feats --utt2spk=ark:data/dev/split10/1/utt2spk ark:exp/tri3b/decode_tgmed_dev/pre_trans.1 ark:- ark:- |' ark,s,cs:- ark:exp/tri3b/decode_tgmed_dev/trans_tmp.1 
+lattice-determinize-pruned --acoustic-scale=0.083333 --beam=4.0 'ark:gunzip -c exp/tri3b/decode_tgmed_dev/lat.tmp.1.gz|' ark:- 
+apply-cmvn --utt2spk=ark:data/dev/split10/1/utt2spk scp:data/dev/split10/1/cmvn.scp scp:data/dev/split10/1/feats.scp ark:- 
+splice-feats --left-context=3 --right-context=3 ark:- ark:- 
+transform-feats exp/tri3b/final.mat ark:- ark:- 
+transform-feats --utt2spk=ark:data/dev/split10/1/utt2spk ark:exp/tri3b/decode_tgmed_dev/pre_trans.1 ark:- ark:- 
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:ComputeFmllrMatrixDiagGmmFull():fmllr-diag-gmm.cc:262) fMLLR objf improvement is 0.26325 per frame over 2110.4 frames.
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:143) For speaker no12x228, auxf-impr from fMLLR is 0.26325, over 2110.4 frames.
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:ComputeFmllrMatrixDiagGmmFull():fmllr-diag-gmm.cc:262) fMLLR objf improvement is 0.0582502 per frame over 100789 frames.
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:143) For speaker no12x231, auxf-impr from fMLLR is 0.0582502, over 100789 frames.
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:ComputeFmllrMatrixDiagGmmFull():fmllr-diag-gmm.cc:262) fMLLR objf improvement is 0.0487623 per frame over 100257 frames.
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:143) For speaker no12x235, auxf-impr from fMLLR is 0.0487623, over 100257 frames.
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:ComputeFmllrMatrixDiagGmmFull():fmllr-diag-gmm.cc:262) fMLLR objf improvement is 0.139867 per frame over 97010 frames.
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:143) For speaker no12x238, auxf-impr from fMLLR is 0.139867, over 97010 frames.
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:ComputeFmllrMatrixDiagGmmFull():fmllr-diag-gmm.cc:262) fMLLR objf improvement is 0.078529 per frame over 123833 frames.
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:143) For speaker no12x240, auxf-impr from fMLLR is 0.078529, over 123833 frames.
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242001
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242002
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242003
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242004
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242005
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242006
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242007
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242008
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242009
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242010
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242011
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242012
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242013
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242014
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242015
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242016
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242017
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242018
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242019
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242020
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242021
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242022
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242023
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242024
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242025
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242026
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242027
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242028
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242029
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242030
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242031
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242032
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242033
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242034
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242035
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242036
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242037
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242038
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242039
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242040
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242041
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242042
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242043
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242044
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242045
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242046
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242047
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242048
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242049
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242050
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242051
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242052
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242053
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242054
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242055
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242056
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242057
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242058
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242059
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242060
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242061
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242062
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242063
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242064
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242065
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242066
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242067
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242068
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242069
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242070
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242071
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242072
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242073
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242074
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242075
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242076
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242077
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242078
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242079
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242080
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242081
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242082
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242083
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242084
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242085
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242086
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242087
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242088
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242089
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242090
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242091
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242092
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242093
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242094
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242095
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242096
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242097
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242098
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242099
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242100
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242101
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242102
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242103
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242104
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242105
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242106
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242107
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242108
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242109
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242110
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242111
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242112
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242113
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242114
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242115
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242116
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242117
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242118
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242119
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242120
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242121
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242122
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242123
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242124
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242125
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242126
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242127
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242128
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242129
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242130
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242131
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242132
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242133
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242134
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242135
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242136
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242137
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242138
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242139
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242140
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242141
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242142
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242143
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242144
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242145
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242146
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242147
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242148
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242149
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242150
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242151
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242152
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242153
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242154
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242155
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242156
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242157
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242158
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242159
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242160
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242161
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242162
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242163
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242164
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242165
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242166
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242167
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242168
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242169
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242170
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242171
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242172
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242173
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242174
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242175
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242176
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242177
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242178
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242179
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242180
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242181
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242182
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242183
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242184
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242185
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242186
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242187
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242188
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242189
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242190
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242191
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242192
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242193
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242194
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242195
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242196
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242197
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242198
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242199
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242200
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242201
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242202
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242203
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242204
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242205
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242206
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242207
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242208
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242209
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242210
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242211
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242212
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242213
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242214
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242215
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242216
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242217
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242218
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242219
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242220
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242221
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242222
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242223
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242224
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242225
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242226
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242227
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242228
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242229
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242230
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242231
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242232
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242233
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242234
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242235
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242236
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242237
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242238
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242239
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242240
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242241
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242242
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242243
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242244
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242245
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242246
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242247
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242248
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242249
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242250
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242251
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242252
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242253
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242254
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242255
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242256
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242257
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242258
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242259
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242260
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242261
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242262
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242263
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242264
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242265
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242266
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242267
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242268
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242269
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242270
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242271
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242272
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242273
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242274
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242275
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242276
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242277
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242278
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242279
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242280
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242281
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242282
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242283
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242284
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242285
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242286
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242287
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242288
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242289
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242290
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242291
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242292
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242293
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242294
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242295
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242296
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242297
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242298
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242299
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242300
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242301
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242302
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242303
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242304
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242305
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242306
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242307
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242308
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242309
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242310
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242311
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no12x242-02081999-0832_u0242312
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:Update():fmllr-diag-gmm.cc:162) Not updating fMLLR since below min-count: count is 0
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:143) For speaker no12x242, auxf-impr from fMLLR is -nan, over 0 frames.
+LOG (apply-cmvn[5.5.0~1-40c7]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 1583 utterances, errors on 0
+LOG (transform-feats[5.5.0~1-40c7]:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -91.665 over 832859 frames.
+LOG (transform-feats[5.5.0~1-40c7]:main():transform-feats.cc:161) Applied transform to 1583 utterances; 0 had errors.
+LOG (transform-feats[5.5.0~1-40c7]:main():transform-feats.cc:158) Overall average logdet is 2.09239 over 832859 frames.
+LOG (transform-feats[5.5.0~1-40c7]:main():transform-feats.cc:161) Applied transform to 1583 utterances; 0 had errors.
+LOG (lattice-determinize-pruned[5.5.0~1-40c7]:main():lattice-determinize-pruned.cc:159) Average input-lattice depth (measured at at state level) is 13.1701, output depth is 2.35274, over 832859 frames  (average num-frames = 526.127).
+LOG (lattice-determinize-pruned[5.5.0~1-40c7]:main():lattice-determinize-pruned.cc:164) Done 1583 lattices, determinization finished earlier than specified by the beam (or output was empty) on 0 of these.
+LOG (lattice-to-post[5.5.0~1-40c7]:main():lattice-to-post.cc:106) Overall average log-like/frame is -3.59068 over 832859 frames.  Average acoustic like/frame is -3.43805
+LOG (lattice-to-post[5.5.0~1-40c7]:main():lattice-to-post.cc:110) Done 1583 lattices.
+LOG (weight-silence-post[5.5.0~1-40c7]:main():weight-silence-post.cc:95) Done 1583 posteriors.
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:ComputeFmllrMatrixDiagGmmFull():fmllr-diag-gmm.cc:262) fMLLR objf improvement is 0.0431407 per frame over 102392 frames.
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:143) For speaker no12x252, auxf-impr from fMLLR is 0.0431407, over 102392 frames.
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:188) Done 1583 files, 0 with no posts, 312 with other errors.
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:190) Overall fMLLR auxf impr per frame is 0.0741379 over 526392 frames.
+compose-transforms --b-is-affine=true ark:exp/tri3b/decode_tgmed_dev/trans_tmp.1 ark:exp/tri3b/decode_tgmed_dev/pre_trans.1 ark:exp/tri3b/decode_tgmed_dev/trans.1 
+# Accounting: time=23 threads=1
+# Ended (code 0) at Mon Jul 12 20:38:53 UTC 2021, elapsed time 23 seconds

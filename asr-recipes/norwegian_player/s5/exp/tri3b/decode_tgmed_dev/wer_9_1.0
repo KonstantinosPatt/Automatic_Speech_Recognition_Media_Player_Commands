@@ -1,0 +1,4 @@
+compute-wer --text --mode=present ark:exp/tri3b/decode_tgmed_dev/scoring/test_filt.txt ark,p:- 
+%WER 27.06 [ 44202 / 163377, 11276 ins, 4341 del, 28585 sub ] [PARTIAL]
+%SER 57.12 [ 11246 / 19688 ]
+Scored 19688 sentences, 312 not present in hyp.

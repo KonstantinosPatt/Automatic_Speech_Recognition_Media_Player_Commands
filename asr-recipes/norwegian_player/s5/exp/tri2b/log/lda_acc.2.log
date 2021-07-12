@@ -1,0 +1,140 @@
+# ali-to-post "ark:gunzip -c exp/tri1_ali_train/ali.2.gz|" ark:- | weight-silence-post 0.0 1:2:3:4:5:6:7:8:9:10 exp/tri1_ali_train/final.mdl ark:- ark:- | acc-lda --rand-prune=4.0 exp/tri1_ali_train/final.mdl "ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split5/2/utt2spk scp:data/train/split5/2/cmvn.scp scp:data/train/split5/2/feats.scp ark:- | splice-feats --left-context=3 --right-context=3 ark:- ark:- |" ark,s,cs:- exp/tri2b/lda.2.acc 
+# Started at Mon Jul 12 19:40:21 UTC 2021
+#
+weight-silence-post 0.0 1:2:3:4:5:6:7:8:9:10 exp/tri1_ali_train/final.mdl ark:- ark:- 
+ali-to-post 'ark:gunzip -c exp/tri1_ali_train/ali.2.gz|' ark:- 
+acc-lda --rand-prune=4.0 exp/tri1_ali_train/final.mdl 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split5/2/utt2spk scp:data/train/split5/2/cmvn.scp scp:data/train/split5/2/feats.scp ark:- | splice-feats --left-context=3 --right-context=3 ark:- ark:- |' ark,s,cs:- exp/tri2b/lda.2.acc 
+apply-cmvn --utt2spk=ark:data/train/split5/2/utt2spk scp:data/train/split5/2/cmvn.scp scp:data/train/split5/2/feats.scp ark:- 
+splice-feats --left-context=3 --right-context=3 ark:- ark:- 
+WARNING (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:77) No posteriors for utterance no10x716-10081999-1259_u0716001
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 100 utterances.
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 200 utterances.
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 300 utterances.
+WARNING (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:77) No posteriors for utterance no10x732-18081999-0928_u0732001
+WARNING (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:77) No posteriors for utterance no10x732-18081999-0928_u0732033
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 400 utterances.
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 500 utterances.
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 600 utterances.
+WARNING (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:77) No posteriors for utterance no10x736-18081999-1602_u0736001
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 700 utterances.
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 800 utterances.
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 900 utterances.
+WARNING (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:77) No posteriors for utterance no10x746-24081999-0838_u0746001
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 1000 utterances.
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 1100 utterances.
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 1200 utterances.
+WARNING (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:77) No posteriors for utterance no10x747-24081999-0935_u0747001
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 1300 utterances.
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 1400 utterances.
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 1500 utterances.
+WARNING (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:77) No posteriors for utterance no10x752-25081999-0815_u0752001
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 1600 utterances.
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 1700 utterances.
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 1800 utterances.
+WARNING (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:77) No posteriors for utterance no10x757-26081999-0644_u0757001
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 1900 utterances.
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 2000 utterances.
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 2100 utterances.
+WARNING (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:77) No posteriors for utterance no10x784-07071999-0827_u0784001
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 2200 utterances.
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 2300 utterances.
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 2400 utterances.
+WARNING (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:77) No posteriors for utterance no10x819-19071999-0948_u0819001
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 2500 utterances.
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 2600 utterances.
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 2700 utterances.
+WARNING (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:77) No posteriors for utterance no10x871-10081999-0941_u0871001
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 2800 utterances.
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 2900 utterances.
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 3000 utterances.
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 3100 utterances.
+WARNING (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:77) No posteriors for utterance no10x888-18081999-1031_u0888001
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 3200 utterances.
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 3300 utterances.
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 3400 utterances.
+WARNING (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:77) No posteriors for utterance no10xx89-02081999-1310_u0089001
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 3500 utterances.
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 3600 utterances.
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 3700 utterances.
+WARNING (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:77) No posteriors for utterance no11x004-02071999-1418_u0004001
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 3800 utterances.
+WARNING (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:77) No posteriors for utterance no11x004-02071999-1418_u0004142
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 3900 utterances.
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 4000 utterances.
+WARNING (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:77) No posteriors for utterance no11x045-15071999-1219_u0046001
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 4100 utterances.
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 4200 utterances.
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 4300 utterances.
+WARNING (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:77) No posteriors for utterance no11x052-19071999-1222_u0053001
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 4400 utterances.
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 4500 utterances.
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 4600 utterances.
+WARNING (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:77) No posteriors for utterance no11x067-22071999-1042_u0067001
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 4700 utterances.
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 4800 utterances.
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 4900 utterances.
+WARNING (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:77) No posteriors for utterance no11x076-28071999-0949_u0076001
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 5000 utterances.
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 5100 utterances.
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 5200 utterances.
+WARNING (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:77) No posteriors for utterance no11x077-28071999-1215_u0077001
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 5300 utterances.
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 5400 utterances.
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 5500 utterances.
+WARNING (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:77) No posteriors for utterance no11x118-11081999-1433_u0118001
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 5600 utterances.
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 5700 utterances.
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 5800 utterances.
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 5900 utterances.
+WARNING (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:77) No posteriors for utterance no11x121-28012000-0910_u0007001
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 6000 utterances.
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 6100 utterances.
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 6200 utterances.
+WARNING (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:77) No posteriors for utterance no11x134-18081999-1501_u0134001
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 6300 utterances.
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 6400 utterances.
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 6500 utterances.
+WARNING (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:77) No posteriors for utterance no11x142-20081999-0926_u0142001
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 6600 utterances.
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 6700 utterances.
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 6800 utterances.
+WARNING (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:77) No posteriors for utterance no11x148-01022000-1250_u0008001
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 6900 utterances.
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 7000 utterances.
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 7100 utterances.
+WARNING (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:77) No posteriors for utterance no11x155-02071999-1205_u0155001
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 7200 utterances.
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 7300 utterances.
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 7400 utterances.
+WARNING (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:77) No posteriors for utterance no11x156-02071999-1325_u0156001
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 7500 utterances.
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 7600 utterances.
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 7700 utterances.
+WARNING (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:77) No posteriors for utterance no11x191-14071999-1451_u0191001
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 7800 utterances.
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 7900 utterances.
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 8000 utterances.
+WARNING (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:77) No posteriors for utterance no11x193-10121999-0859_u0009001
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 8100 utterances.
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 8200 utterances.
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 8300 utterances.
+WARNING (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:77) No posteriors for utterance no11x198-15071999-1319_u0198001
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 8400 utterances.
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 8500 utterances.
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 8600 utterances.
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 8700 utterances.
+WARNING (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:77) No posteriors for utterance no11x215-21071999-0816_u0215001
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 8800 utterances.
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 8900 utterances.
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 9000 utterances.
+WARNING (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:77) No posteriors for utterance no11x217-21071999-1152_u0217001
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 9100 utterances.
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 9200 utterances.
+LOG (ali-to-post[5.5.0~1-40c7]:main():ali-to-post.cc:73) Converted 9328 alignments.
+LOG (weight-silence-post[5.5.0~1-40c7]:main():weight-silence-post.cc:95) Done 9328 posteriors.
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:114) Done 9300 utterances.
+LOG (apply-cmvn[5.5.0~1-40c7]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 9360 utterances, errors on 0
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:117) Done 9328 files, failed for 32
+LOG (acc-lda[5.5.0~1-40c7]:main():acc-lda.cc:122) Written statistics.
+# Accounting: time=4 threads=1
+# Ended (code 0) at Mon Jul 12 19:40:25 UTC 2021, elapsed time 4 seconds

@@ -1,0 +1,71 @@
+# gunzip -c exp/mono/phone_stats.*.gz | steps/diagnostic/analyze_phone_length_stats.py data/lang_nosp 
+# Started at Mon Jul 12 19:29:46 UTC 2021
+#
+At utterance begin, SIL accounts for 95.2% of phone occurrences, with duration (median, mean, 95-percentile) is (48,46.3,75) frames.
+At utterance begin, nonsilence accounts for 4.8% of phone occurrences, with duration (median, mean, 95-percentile) is (12,18.8,51) frames.
+At utterance begin, f_B accounts for 0.8% of phone occurrences, with duration (median, mean, 95-percentile) is (6,14.5,18) frames.
+At utterance begin, b_B accounts for 0.6% of phone occurrences, with duration (median, mean, 95-percentile) is (9,16.3,16) frames.
+At utterance begin, h_B accounts for 0.6% of phone occurrences, with duration (median, mean, 95-percentile) is (6,23.3,13) frames.
+At utterance begin, s_B accounts for 0.6% of phone occurrences, with duration (median, mean, 95-percentile) is (3,14.0,12) frames.
+At utterance end, SIL accounts for 82.0% of phone occurrences, with duration (median, mean, 95-percentile) is (20,23.7,54) frames.
+At utterance end, nonsilence accounts for 18.0% of phone occurrences, with duration (median, mean, 95-percentile) is (18,18.1,31) frames.
+At utterance end, a_E accounts for 3.2% of phone occurrences, with duration (median, mean, 95-percentile) is (15,16.1,25) frames.
+At utterance end, r_E accounts for 2.8% of phone occurrences, with duration (median, mean, 95-percentile) is (12,13.1,21) frames.
+At utterance end, t_E accounts for 2.6% of phone occurrences, with duration (median, mean, 95-percentile) is (21,22.5,33) frames.
+At utterance end, n_E accounts for 2.2% of phone occurrences, with duration (median, mean, 95-percentile) is (10,14.3,27) frames.
+At utterance end, k_E accounts for 1.0% of phone occurrences, with duration (median, mean, 95-percentile) is (14,19.0,29) frames.
+At utterance end, s_E accounts for 1.0% of phone occurrences, with duration (median, mean, 95-percentile) is (17,24.0,27) frames.
+At utterance end, ɡ_E accounts for 1.0% of phone occurrences, with duration (median, mean, 95-percentile) is (17,17.0,19) frames.
+At utterance end, l_E accounts for 0.6% of phone occurrences, with duration (median, mean, 95-percentile) is (3,15.7,3) frames.
+At utterance end, m_E accounts for 0.6% of phone occurrences, with duration (median, mean, 95-percentile) is (13,18.0,19) frames.
+Overall, nonsilence accounts for 75.3% of phone occurrences, with duration (median, mean, 95-percentile) is (10,12.5,28) frames.
+Overall, SIL accounts for 24.7% of phone occurrences, with duration (median, mean, 95-percentile) is (34,35.8,70) frames.
+Overall, r_I accounts for 4.4% of phone occurrences, with duration (median, mean, 95-percentile) is (5,6.4,15) frames.
+Overall, l_I accounts for 3.7% of phone occurrences, with duration (median, mean, 95-percentile) is (6,7.8,19) frames.
+Overall, ə_I accounts for 3.4% of phone occurrences, with duration (median, mean, 95-percentile) is (8,8.8,16) frames.
+Overall, n_I accounts for 3.3% of phone occurrences, with duration (median, mean, 95-percentile) is (8,9.6,20) frames.
+Overall, a_E accounts for 2.6% of phone occurrences, with duration (median, mean, 95-percentile) is (16,15.7,24) frames.
+Overall, t_I accounts for 2.4% of phone occurrences, with duration (median, mean, 95-percentile) is (8,8.9,16) frames.
+Overall, a_I accounts for 2.3% of phone occurrences, with duration (median, mean, 95-percentile) is (12,12.3,20) frames.
+Overall, s_I accounts for 2.2% of phone occurrences, with duration (median, mean, 95-percentile) is (11,11.5,20) frames.
+Overall, n_E accounts for 2.1% of phone occurrences, with duration (median, mean, 95-percentile) is (15,15.5,26) frames.
+Overall, s_B accounts for 2.1% of phone occurrences, with duration (median, mean, 95-percentile) is (17,18.3,31) frames.
+Overall, ɑ_I accounts for 1.9% of phone occurrences, with duration (median, mean, 95-percentile) is (9,9.6,14) frames.
+Overall, ɪ_I accounts for 1.9% of phone occurrences, with duration (median, mean, 95-percentile) is (9,9.1,14) frames.
+Overall, ɛ_I accounts for 1.8% of phone occurrences, with duration (median, mean, 95-percentile) is (8,8.2,13) frames.
+Overall, eː_I accounts for 1.6% of phone occurrences, with duration (median, mean, 95-percentile) is (8,10.9,21) frames.
+Overall, r_E accounts for 1.6% of phone occurrences, with duration (median, mean, 95-percentile) is (14,14.2,28) frames.
+Overall, k_I accounts for 1.4% of phone occurrences, with duration (median, mean, 95-percentile) is (10,11.0,18) frames.
+Overall, ɔ_I accounts for 1.4% of phone occurrences, with duration (median, mean, 95-percentile) is (8,8.4,13) frames.
+Overall, m_I accounts for 1.4% of phone occurrences, with duration (median, mean, 95-percentile) is (8,8.0,13) frames.
+Overall, iː_I accounts for 1.3% of phone occurrences, with duration (median, mean, 95-percentile) is (12,12.1,20) frames.
+Overall, d_I accounts for 1.3% of phone occurrences, with duration (median, mean, 95-percentile) is (7,8.1,12) frames.
+Overall, t_E accounts for 1.2% of phone occurrences, with duration (median, mean, 95-percentile) is (21,20.8,38) frames.
+Overall, b_B accounts for 1.1% of phone occurrences, with duration (median, mean, 95-percentile) is (9,12.8,27) frames.
+Overall, v_I accounts for 1.1% of phone occurrences, with duration (median, mean, 95-percentile) is (4,5.3,8) frames.
+Overall, uː_I accounts for 1.0% of phone occurrences, with duration (median, mean, 95-percentile) is (12,12.9,21) frames.
+Overall, h_B accounts for 1.0% of phone occurrences, with duration (median, mean, 95-percentile) is (12,16.6,51) frames.
+Overall, t_B accounts for 0.9% of phone occurrences, with duration (median, mean, 95-percentile) is (9,10.0,14) frames.
+Overall, l_E accounts for 0.9% of phone occurrences, with duration (median, mean, 95-percentile) is (16,16.6,30) frames.
+Overall, k_B accounts for 0.9% of phone occurrences, with duration (median, mean, 95-percentile) is (10,17.7,49) frames.
+Overall, f_B accounts for 0.8% of phone occurrences, with duration (median, mean, 95-percentile) is (12,15.2,31) frames.
+Overall, ʉ_I accounts for 0.8% of phone occurrences, with duration (median, mean, 95-percentile) is (9,9.2,16) frames.
+Overall, m_B accounts for 0.8% of phone occurrences, with duration (median, mean, 95-percentile) is (10,12.5,21) frames.
+Overall, d_B accounts for 0.7% of phone occurrences, with duration (median, mean, 95-percentile) is (10,11.0,17) frames.
+Overall, ŋ_I accounts for 0.7% of phone occurrences, with duration (median, mean, 95-percentile) is (12,13.4,22) frames.
+Overall, v_B accounts for 0.6% of phone occurrences, with duration (median, mean, 95-percentile) is (10,12.3,17) frames.
+Overall, n_B accounts for 0.6% of phone occurrences, with duration (median, mean, 95-percentile) is (10,11.5,18) frames.
+Overall, m_E accounts for 0.6% of phone occurrences, with duration (median, mean, 95-percentile) is (15,15.8,22) frames.
+Overall, r_B accounts for 0.6% of phone occurrences, with duration (median, mean, 95-percentile) is (10,9.8,13) frames.
+Overall, ɑ_B accounts for 0.6% of phone occurrences, with duration (median, mean, 95-percentile) is (16,18.5,28) frames.
+Overall, ʉː_I accounts for 0.6% of phone occurrences, with duration (median, mean, 95-percentile) is (12,12.8,20) frames.
+Overall, ɡ_B accounts for 0.6% of phone occurrences, with duration (median, mean, 95-percentile) is (8,9.4,18) frames.
+Overall, ɡ_I accounts for 0.6% of phone occurrences, with duration (median, mean, 95-percentile) is (6,8.3,17) frames.
+Overall, ʃ_I accounts for 0.5% of phone occurrences, with duration (median, mean, 95-percentile) is (11,11.1,17) frames.
+Overall, s_E accounts for 0.5% of phone occurrences, with duration (median, mean, 95-percentile) is (27,26.7,40) frames.
+The optional-silence phone SIL occupies 48.5% of frames overall 
+Limiting the stats to the 48.3% of frames not covered by an utterance-[begin/end] phone, optional-silence SIL occupies 0.0% of frames.
+Assuming 100 frames per second, the alignments represent 0.2 hours of data, or 0.1 hours if SIL frames are excluded.
+Utterance-internal optional-silences SIL comprise 0.0% of utterance-internal phones, with duration (median, mean, 95-percentile) = (6,6.0,6)
+# Accounting: time=0 threads=1
+# Ended (code 0) at Mon Jul 12 19:29:46 UTC 2021, elapsed time 0 seconds

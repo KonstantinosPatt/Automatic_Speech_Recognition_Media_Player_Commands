@@ -1,0 +1,420 @@
+# ali-to-post "ark:gunzip -c exp/tri2b_ali_train/ali.4.gz|" ark:- | weight-silence-post 0.0 1:2:3:4:5:6:7:8:9:10 exp/tri2b_ali_train/final.mdl ark:- ark:- | gmm-est-fmllr --fmllr-update-type=full --spk2utt=ark:data/train/split5/4/spk2utt exp/tri2b_ali_train/final.mdl "ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split5/4/utt2spk scp:data/train/split5/4/cmvn.scp scp:data/train/split5/4/feats.scp ark:- | splice-feats --left-context=3 --right-context=3 ark:- ark:- | transform-feats exp/tri2b_ali_train/final.mat ark:- ark:- |" ark:- ark:exp/tri3b/trans.4 
+# Started at Mon Jul 12 19:51:21 UTC 2021
+#
+weight-silence-post 0.0 1:2:3:4:5:6:7:8:9:10 exp/tri2b_ali_train/final.mdl ark:- ark:- 
+ali-to-post 'ark:gunzip -c exp/tri2b_ali_train/ali.4.gz|' ark:- 
+gmm-est-fmllr --fmllr-update-type=full --spk2utt=ark:data/train/split5/4/spk2utt exp/tri2b_ali_train/final.mdl 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/train/split5/4/utt2spk scp:data/train/split5/4/cmvn.scp scp:data/train/split5/4/feats.scp ark:- | splice-feats --left-context=3 --right-context=3 ark:- ark:- | transform-feats exp/tri2b_ali_train/final.mat ark:- ark:- |' ark:- ark:exp/tri3b/trans.4 
+apply-cmvn --utt2spk=ark:data/train/split5/4/utt2spk scp:data/train/split5/4/cmvn.scp scp:data/train/split5/4/feats.scp ark:- 
+splice-feats --left-context=3 --right-context=3 ark:- ark:- 
+transform-feats exp/tri2b_ali_train/final.mat ark:- ark:- 
+LOG (ali-to-post[5.5.0~1-40c7]:main():ali-to-post.cc:73) Converted 9693 alignments.
+LOG (weight-silence-post[5.5.0~1-40c7]:main():weight-silence-post.cc:95) Done 9693 posteriors.
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:118) Did not find posteriors for utterance no11x558-09081999-1328_u0558001
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:ComputeFmllrMatrixDiagGmmFull():fmllr-diag-gmm.cc:262) fMLLR objf improvement is 1.73683 per frame over 83865 frames.
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:143) For speaker no11x558, auxf-impr from fMLLR is 1.73683, over 83865 frames.
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:118) Did not find posteriors for utterance no11x561-10081999-0844_u0561001
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:ComputeFmllrMatrixDiagGmmFull():fmllr-diag-gmm.cc:262) fMLLR objf improvement is 1.58108 per frame over 119817 frames.
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:143) For speaker no11x561, auxf-impr from fMLLR is 1.58108, over 119817 frames.
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:118) Did not find posteriors for utterance no11x587-20081999-1454_u0587001
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:ComputeFmllrMatrixDiagGmmFull():fmllr-diag-gmm.cc:262) fMLLR objf improvement is 1.45666 per frame over 100581 frames.
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:143) For speaker no11x587, auxf-impr from fMLLR is 1.45666, over 100581 frames.
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:118) Did not find posteriors for utterance no11x595-24081999-1309_u0595001
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:ComputeFmllrMatrixDiagGmmFull():fmllr-diag-gmm.cc:262) fMLLR objf improvement is 1.95602 per frame over 91280 frames.
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:143) For speaker no11x595, auxf-impr from fMLLR is 1.95602, over 91280 frames.
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:118) Did not find posteriors for utterance no11x619-03071999-1325_u0619001
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:ComputeFmllrMatrixDiagGmmFull():fmllr-diag-gmm.cc:262) fMLLR objf improvement is 3.21338 per frame over 91847 frames.
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:143) For speaker no11x619, auxf-impr from fMLLR is 3.21338, over 91847 frames.
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:118) Did not find posteriors for utterance no11x622-04071999-1315_u0622001
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:ComputeFmllrMatrixDiagGmmFull():fmllr-diag-gmm.cc:262) fMLLR objf improvement is 2.83595 per frame over 95316 frames.
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:143) For speaker no11x622, auxf-impr from fMLLR is 2.83595, over 95316 frames.
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:118) Did not find posteriors for utterance no11x628-06071999-1619_u0628001
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:ComputeFmllrMatrixDiagGmmFull():fmllr-diag-gmm.cc:262) fMLLR objf improvement is 1.73019 per frame over 103686 frames.
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:143) For speaker no11x628, auxf-impr from fMLLR is 1.73019, over 103686 frames.
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:118) Did not find posteriors for utterance no11x654-14071999-1138_u0654001
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:ComputeFmllrMatrixDiagGmmFull():fmllr-diag-gmm.cc:262) fMLLR objf improvement is 2.11799 per frame over 85572 frames.
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:143) For speaker no11x654, auxf-impr from fMLLR is 2.11799, over 85572 frames.
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:118) Did not find posteriors for utterance no11x656-16071999-1449_u0656001
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:ComputeFmllrMatrixDiagGmmFull():fmllr-diag-gmm.cc:262) fMLLR objf improvement is 2.57199 per frame over 109664 frames.
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:143) For speaker no11x656, auxf-impr from fMLLR is 2.57199, over 109664 frames.
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:118) Did not find posteriors for utterance no11x657-16071999-1630_u0657001
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:ComputeFmllrMatrixDiagGmmFull():fmllr-diag-gmm.cc:262) fMLLR objf improvement is 2.85064 per frame over 108932 frames.
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:143) For speaker no11x657, auxf-impr from fMLLR is 2.85064, over 108932 frames.
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:118) Did not find posteriors for utterance no11x658-19071999-0847_u0658001
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:ComputeFmllrMatrixDiagGmmFull():fmllr-diag-gmm.cc:262) fMLLR objf improvement is 3.27629 per frame over 102104 frames.
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:143) For speaker no11x658, auxf-impr from fMLLR is 3.27629, over 102104 frames.
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:118) Did not find posteriors for utterance no11x661-19071999-1242_u0661001
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:ComputeFmllrMatrixDiagGmmFull():fmllr-diag-gmm.cc:262) fMLLR objf improvement is 2.22786 per frame over 108599 frames.
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:143) For speaker no11x661, auxf-impr from fMLLR is 2.22786, over 108599 frames.
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:118) Did not find posteriors for utterance no11x671-21071999-1616_u0671001
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:ComputeFmllrMatrixDiagGmmFull():fmllr-diag-gmm.cc:262) fMLLR objf improvement is 1.91148 per frame over 109210 frames.
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:143) For speaker no11x671, auxf-impr from fMLLR is 1.91148, over 109210 frames.
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:118) Did not find posteriors for utterance no11x673-22071999-1129_u0673001
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:ComputeFmllrMatrixDiagGmmFull():fmllr-diag-gmm.cc:262) fMLLR objf improvement is 1.93108 per frame over 117922 frames.
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:143) For speaker no11x673, auxf-impr from fMLLR is 1.93108, over 117922 frames.
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:118) Did not find posteriors for utterance no11x678-23071999-1359_u0678001
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:ComputeFmllrMatrixDiagGmmFull():fmllr-diag-gmm.cc:262) fMLLR objf improvement is 1.17256 per frame over 103717 frames.
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:143) For speaker no11x678, auxf-impr from fMLLR is 1.17256, over 103717 frames.
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:118) Did not find posteriors for utterance no11x697-03081999-1043_u0697001
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:ComputeFmllrMatrixDiagGmmFull():fmllr-diag-gmm.cc:262) fMLLR objf improvement is 2.53231 per frame over 99480 frames.
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:143) For speaker no11x697, auxf-impr from fMLLR is 2.53231, over 99480 frames.
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:118) Did not find posteriors for utterance no11x706-06081999-1043_u0706001
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:ComputeFmllrMatrixDiagGmmFull():fmllr-diag-gmm.cc:262) fMLLR objf improvement is 3.14765 per frame over 96211 frames.
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:143) For speaker no11x706, auxf-impr from fMLLR is 3.14765, over 96211 frames.
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:118) Did not find posteriors for utterance no11x734-18081999-1256_u0734001
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:ComputeFmllrMatrixDiagGmmFull():fmllr-diag-gmm.cc:262) fMLLR objf improvement is 2.1056 per frame over 96076 frames.
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:143) For speaker no11x734, auxf-impr from fMLLR is 2.1056, over 96076 frames.
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:118) Did not find posteriors for utterance no11x745-23081999-1547_u0745001
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:ComputeFmllrMatrixDiagGmmFull():fmllr-diag-gmm.cc:262) fMLLR objf improvement is 1.80856 per frame over 87743 frames.
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:143) For speaker no11x745, auxf-impr from fMLLR is 1.80856, over 87743 frames.
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:118) Did not find posteriors for utterance no11x763-11012000-1509_u0008001
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:118) Did not find posteriors for utterance no11x763-11012000-1509_u0008282
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:ComputeFmllrMatrixDiagGmmFull():fmllr-diag-gmm.cc:262) fMLLR objf improvement is 2.87391 per frame over 106132 frames.
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:143) For speaker no11x763, auxf-impr from fMLLR is 2.87391, over 106132 frames.
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:118) Did not find posteriors for utterance no11x771-02071999-1507_u0771001
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:ComputeFmllrMatrixDiagGmmFull():fmllr-diag-gmm.cc:262) fMLLR objf improvement is 2.0716 per frame over 124691 frames.
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:143) For speaker no11x771, auxf-impr from fMLLR is 2.0716, over 124691 frames.
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:118) Did not find posteriors for utterance no11x792-08071999-1335_u0792001
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:ComputeFmllrMatrixDiagGmmFull():fmllr-diag-gmm.cc:262) fMLLR objf improvement is 2.67643 per frame over 96829 frames.
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:143) For speaker no11x792, auxf-impr from fMLLR is 2.67643, over 96829 frames.
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:118) Did not find posteriors for utterance no11x801-12071999-1436_u0801001
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:ComputeFmllrMatrixDiagGmmFull():fmllr-diag-gmm.cc:262) fMLLR objf improvement is 2.63271 per frame over 103288 frames.
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:143) For speaker no11x801, auxf-impr from fMLLR is 2.63271, over 103288 frames.
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:118) Did not find posteriors for utterance no11x803-13071999-0818_u0803001
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:ComputeFmllrMatrixDiagGmmFull():fmllr-diag-gmm.cc:262) fMLLR objf improvement is 2.35404 per frame over 84796 frames.
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:143) For speaker no11x803, auxf-impr from fMLLR is 2.35404, over 84796 frames.
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:118) Did not find posteriors for utterance no11x848-29071999-1442_u0848001
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:ComputeFmllrMatrixDiagGmmFull():fmllr-diag-gmm.cc:262) fMLLR objf improvement is 3.67586 per frame over 123774 frames.
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:143) For speaker no11x848, auxf-impr from fMLLR is 3.67586, over 123774 frames.
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:118) Did not find posteriors for utterance no11x859-03081999-1805_u0859001
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:ComputeFmllrMatrixDiagGmmFull():fmllr-diag-gmm.cc:262) fMLLR objf improvement is 2.06101 per frame over 105656 frames.
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:143) For speaker no11x859, auxf-impr from fMLLR is 2.06101, over 105656 frames.
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:118) Did not find posteriors for utterance no11x868-09081999-1447_u0868001
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:ComputeFmllrMatrixDiagGmmFull():fmllr-diag-gmm.cc:262) fMLLR objf improvement is 2.06401 per frame over 101209 frames.
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:143) For speaker no11x868, auxf-impr from fMLLR is 2.06401, over 101209 frames.
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:118) Did not find posteriors for utterance no11x895-20081999-1300_u0895001
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:ComputeFmllrMatrixDiagGmmFull():fmllr-diag-gmm.cc:262) fMLLR objf improvement is 1.79613 per frame over 103759 frames.
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:143) For speaker no11x895, auxf-impr from fMLLR is 1.79613, over 103759 frames.
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908001
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908002
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908003
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908004
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908005
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908006
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908007
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908008
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908009
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908010
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908011
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908012
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908013
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908014
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908015
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908016
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908017
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908018
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908019
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908020
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908021
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908022
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908023
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908024
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908025
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908026
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908027
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908028
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908029
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908030
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908031
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908032
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908033
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908034
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908035
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908036
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908037
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908038
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908039
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908040
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908041
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908042
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908043
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908044
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908045
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908046
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908047
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908048
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908049
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908050
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908051
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908052
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908053
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908054
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908055
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908056
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908057
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908058
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908059
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908060
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908061
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908062
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908063
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908064
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908065
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908066
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908067
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908068
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908069
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908070
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908071
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908072
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908073
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908074
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908075
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908076
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908077
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908078
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908079
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908080
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908081
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908082
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908083
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908084
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908085
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908086
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908087
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908088
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908089
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908090
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908091
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908092
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908093
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908094
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908095
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908096
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908097
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908098
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908099
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908100
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908101
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908102
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908103
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908104
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908105
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908106
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908107
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908108
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908109
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908110
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908111
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908112
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908113
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908114
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908115
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908116
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908117
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908118
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908119
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908120
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908121
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908122
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908123
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908124
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908125
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908126
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908127
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908128
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908129
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908130
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908131
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908132
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908133
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908134
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908135
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908136
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908137
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908138
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908139
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908140
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908141
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908142
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908143
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908144
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908145
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908146
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908147
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908148
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908149
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908150
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908151
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908152
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908153
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908154
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908155
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908156
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908157
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908158
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908159
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908160
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908161
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908162
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908163
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908164
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908165
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908166
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908167
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908168
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908169
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908170
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908171
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908172
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908173
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908174
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908175
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908176
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908177
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908178
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908179
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908180
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908181
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908182
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908183
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908184
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908185
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908186
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908187
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908188
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908189
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908190
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908191
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908192
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908193
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908194
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908195
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908196
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908197
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908198
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908199
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908200
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908201
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908202
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908203
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908204
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908205
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908206
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908207
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908208
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908209
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908210
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908211
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908212
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908213
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908214
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908215
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908216
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908217
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908218
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908219
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908220
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908221
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908222
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908223
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908224
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908225
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908226
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908227
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908228
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908229
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908230
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908231
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908232
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908233
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908234
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908235
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908236
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908237
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908238
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908239
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908240
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908241
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908242
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908243
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908244
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908245
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908246
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908247
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908248
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908249
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908250
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908251
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908252
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908253
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908254
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908255
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908256
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908257
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908258
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908259
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908260
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908261
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908262
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908263
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908264
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908265
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908266
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908267
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908268
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908269
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908270
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908271
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908272
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908273
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908274
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908275
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908276
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908277
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908278
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908279
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908280
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908281
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908282
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908283
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908284
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908285
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908286
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908287
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908288
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908289
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908290
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908291
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908292
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908293
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908294
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908295
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908296
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908297
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908298
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908299
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908300
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908301
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908302
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908303
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908304
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908305
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908306
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908307
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908308
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908309
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908310
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908311
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:113) Did not find features for utterance no11x908-25081999-0852_u0908312
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:Update():fmllr-diag-gmm.cc:162) Not updating fMLLR since below min-count: count is 0
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:143) For speaker no11x908, auxf-impr from fMLLR is -nan, over 0 frames.
+WARNING (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:118) Did not find posteriors for utterance no11xx15-15121999-1659_u0011001
+LOG (apply-cmvn[5.5.0~1-40c7]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 9723 utterances, errors on 0
+LOG (transform-feats[5.5.0~1-40c7]:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -91.665 over 5.02525e+06 frames.
+LOG (transform-feats[5.5.0~1-40c7]:main():transform-feats.cc:161) Applied transform to 9723 utterances; 0 had errors.
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:ComputeFmllrMatrixDiagGmmFull():fmllr-diag-gmm.cc:262) fMLLR objf improvement is 1.61824 per frame over 309043 frames.
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:143) For speaker no11xx15, auxf-impr from fMLLR is 1.61824, over 309043 frames.
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:188) Done 9693 files, 30 with no posts, 312 with other errors.
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:190) Overall fMLLR auxf impr per frame is 2.23642 over 3.1708e+06 frames.
+# Accounting: time=37 threads=1
+# Ended (code 0) at Mon Jul 12 19:51:58 UTC 2021, elapsed time 37 seconds

@@ -1,0 +1,40 @@
+# lattice-determinize-pruned --acoustic-scale=0.083333 --beam=4.0 "ark:gunzip -c exp/tri3b/decode_tgmed_dev/lat.tmp.4.gz|" ark:- | lattice-to-post --acoustic-scale=0.083333 ark:- ark:- | weight-silence-post 0.01 1:2:3:4:5:6:7:8:9:10 exp/tri3b/final.mdl ark:- ark:- | gmm-est-fmllr --fmllr-update-type=full --spk2utt=ark:data/dev/split10/4/spk2utt exp/tri3b/final.mdl "ark,s,cs:apply-cmvn  --utt2spk=ark:data/dev/split10/4/utt2spk scp:data/dev/split10/4/cmvn.scp scp:data/dev/split10/4/feats.scp ark:- | splice-feats --left-context=3 --right-context=3 ark:- ark:- | transform-feats exp/tri3b/final.mat ark:- ark:- | transform-feats --utt2spk=ark:data/dev/split10/4/utt2spk ark:exp/tri3b/decode_tgmed_dev/pre_trans.4 ark:- ark:- |" ark,s,cs:- ark:exp/tri3b/decode_tgmed_dev/trans_tmp.4 && compose-transforms --b-is-affine=true ark:exp/tri3b/decode_tgmed_dev/trans_tmp.4 ark:exp/tri3b/decode_tgmed_dev/pre_trans.4 ark:exp/tri3b/decode_tgmed_dev/trans.4 
+# Started at Mon Jul 12 20:38:30 UTC 2021
+#
+weight-silence-post 0.01 1:2:3:4:5:6:7:8:9:10 exp/tri3b/final.mdl ark:- ark:- 
+gmm-est-fmllr --fmllr-update-type=full --spk2utt=ark:data/dev/split10/4/spk2utt exp/tri3b/final.mdl 'ark,s,cs:apply-cmvn  --utt2spk=ark:data/dev/split10/4/utt2spk scp:data/dev/split10/4/cmvn.scp scp:data/dev/split10/4/feats.scp ark:- | splice-feats --left-context=3 --right-context=3 ark:- ark:- | transform-feats exp/tri3b/final.mat ark:- ark:- | transform-feats --utt2spk=ark:data/dev/split10/4/utt2spk ark:exp/tri3b/decode_tgmed_dev/pre_trans.4 ark:- ark:- |' ark,s,cs:- ark:exp/tri3b/decode_tgmed_dev/trans_tmp.4 
+lattice-determinize-pruned --acoustic-scale=0.083333 --beam=4.0 'ark:gunzip -c exp/tri3b/decode_tgmed_dev/lat.tmp.4.gz|' ark:- 
+lattice-to-post --acoustic-scale=0.083333 ark:- ark:- 
+apply-cmvn --utt2spk=ark:data/dev/split10/4/utt2spk scp:data/dev/split10/4/cmvn.scp scp:data/dev/split10/4/feats.scp ark:- 
+transform-feats --utt2spk=ark:data/dev/split10/4/utt2spk ark:exp/tri3b/decode_tgmed_dev/pre_trans.4 ark:- ark:- 
+transform-feats exp/tri3b/final.mat ark:- ark:- 
+splice-feats --left-context=3 --right-context=3 ark:- ark:- 
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:ComputeFmllrMatrixDiagGmmFull():fmllr-diag-gmm.cc:262) fMLLR objf improvement is 0.0611429 per frame over 111575 frames.
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:143) For speaker no12x362, auxf-impr from fMLLR is 0.0611429, over 111575 frames.
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:ComputeFmllrMatrixDiagGmmFull():fmllr-diag-gmm.cc:262) fMLLR objf improvement is 0.0569935 per frame over 88084.6 frames.
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:143) For speaker no12x364, auxf-impr from fMLLR is 0.0569935, over 88084.6 frames.
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:ComputeFmllrMatrixDiagGmmFull():fmllr-diag-gmm.cc:262) fMLLR objf improvement is 0.0637865 per frame over 104979 frames.
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:143) For speaker no12x376, auxf-impr from fMLLR is 0.0637865, over 104979 frames.
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:ComputeFmllrMatrixDiagGmmFull():fmllr-diag-gmm.cc:262) fMLLR objf improvement is 0.0468171 per frame over 120966 frames.
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:143) For speaker no12x392, auxf-impr from fMLLR is 0.0468171, over 120966 frames.
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:ComputeFmllrMatrixDiagGmmFull():fmllr-diag-gmm.cc:262) fMLLR objf improvement is 0.0454851 per frame over 97839.8 frames.
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:143) For speaker no12x402, auxf-impr from fMLLR is 0.0454851, over 97839.8 frames.
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:ComputeFmllrMatrixDiagGmmFull():fmllr-diag-gmm.cc:262) fMLLR objf improvement is 0.0566766 per frame over 92741.1 frames.
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:143) For speaker no12x440, auxf-impr from fMLLR is 0.0566766, over 92741.1 frames.
+LOG (apply-cmvn[5.5.0~1-40c7]:main():apply-cmvn.cc:162) Applied cepstral mean normalization to 2184 utterances, errors on 0
+LOG (transform-feats[5.5.0~1-40c7]:main():transform-feats.cc:158) Overall average [pseudo-]logdet is -91.665 over 1.09513e+06 frames.
+LOG (transform-feats[5.5.0~1-40c7]:main():transform-feats.cc:161) Applied transform to 2184 utterances; 0 had errors.
+LOG (transform-feats[5.5.0~1-40c7]:main():transform-feats.cc:158) Overall average logdet is 2.07273 over 1.09513e+06 frames.
+LOG (transform-feats[5.5.0~1-40c7]:main():transform-feats.cc:161) Applied transform to 2184 utterances; 0 had errors.
+LOG (lattice-determinize-pruned[5.5.0~1-40c7]:main():lattice-determinize-pruned.cc:159) Average input-lattice depth (measured at at state level) is 12.622, output depth is 2.35589, over 1.09513e+06 frames  (average num-frames = 501.434).
+LOG (lattice-determinize-pruned[5.5.0~1-40c7]:main():lattice-determinize-pruned.cc:164) Done 2184 lattices, determinization finished earlier than specified by the beam (or output was empty) on 0 of these.
+LOG (lattice-to-post[5.5.0~1-40c7]:main():lattice-to-post.cc:106) Overall average log-like/frame is -3.58514 over 1.09513e+06 frames.  Average acoustic like/frame is -3.42637
+LOG (lattice-to-post[5.5.0~1-40c7]:main():lattice-to-post.cc:110) Done 2184 lattices.
+LOG (weight-silence-post[5.5.0~1-40c7]:main():weight-silence-post.cc:95) Done 2184 posteriors.
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:ComputeFmllrMatrixDiagGmmFull():fmllr-diag-gmm.cc:262) fMLLR objf improvement is 0.0251185 per frame over 117881 frames.
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:143) For speaker no12x451, auxf-impr from fMLLR is 0.0251185, over 117881 frames.
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:188) Done 2184 files, 0 with no posts, 0 with other errors.
+LOG (gmm-est-fmllr[5.5.0~1-40c7]:main():gmm-est-fmllr.cc:190) Overall fMLLR auxf impr per frame is 0.0502261 over 734066 frames.
+compose-transforms --b-is-affine=true ark:exp/tri3b/decode_tgmed_dev/trans_tmp.4 ark:exp/tri3b/decode_tgmed_dev/pre_trans.4 ark:exp/tri3b/decode_tgmed_dev/trans.4 
+# Accounting: time=29 threads=1
+# Ended (code 0) at Mon Jul 12 20:38:59 UTC 2021, elapsed time 29 seconds

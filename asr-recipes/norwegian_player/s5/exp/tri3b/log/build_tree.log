@@ -1,0 +1,21 @@
+# build-tree --verbose=1 --max-leaves=2500 --cluster-thresh=-1 exp/tri3b/treeacc data/lang_nosp/phones/roots.int exp/tri3b/questions.qst data/lang_nosp/topo exp/tri3b/tree 
+# Started at Mon Jul 12 19:52:08 UTC 2021
+#
+build-tree --verbose=1 --max-leaves=2500 --cluster-thresh=-1 exp/tri3b/treeacc data/lang_nosp/phones/roots.int exp/tri3b/questions.qst data/lang_nosp/topo exp/tri3b/tree 
+LOG (build-tree[5.5.0~1-40c7]:main():build-tree.cc:104) Number of separate statistics is 110162
+LOG (build-tree[5.5.0~1-40c7]:BuildTree():build-tree.cc:161) BuildTree: before building trees, map has 55 leaves.
+LOG (build-tree[5.5.0~1-40c7]:SplitDecisionTree():build-tree-utils.cc:577) DoDecisionTreeSplit: split 2445 times, #leaves now 2500
+LOG (build-tree[5.5.0~1-40c7]:BuildTree():build-tree.cc:187) Setting clustering threshold to smallest split 4795.75
+VLOG[1] (build-tree[5.5.0~1-40c7]:BuildTree():build-tree.cc:196) After decision tree split, num-leaves = 2500, like-impr = 5.91945 per frame over 2.44286e+07 frames.
+VLOG[1] (build-tree[5.5.0~1-40c7]:BuildTree():build-tree.cc:200) Including just phones that were split, improvement is 5.91945 per frame over 2.44286e+07 frames.
+LOG (build-tree[5.5.0~1-40c7]:BuildTree():build-tree.cc:215) BuildTree: removed 532 leaves.
+VLOG[1] (build-tree[5.5.0~1-40c7]:ClusterEventMapToNClustersRestrictedByMap():build-tree-utils.cc:914) Number of non-empty clusters in map = 54
+VLOG[1] (build-tree[5.5.0~1-40c7]:ClusterEventMapToNClustersRestrictedByMap():build-tree-utils.cc:915) Number of non-empty clusters = 1967
+VLOG[1] (build-tree[5.5.0~1-40c7]:BuildTree():build-tree.cc:256) Objf change due to clustering -0.0530212 per frame.
+VLOG[1] (build-tree[5.5.0~1-40c7]:BuildTree():build-tree.cc:259) Normalizing over only split phones, this is: -0.0530212 per frame.
+VLOG[1] (build-tree[5.5.0~1-40c7]:BuildTree():build-tree.cc:262) Num-leaves is now 1968
+VLOG[1] (build-tree[5.5.0~1-40c7]:main():build-tree.cc:143) For pdf-id 1, low count 0
+WARNING (build-tree[5.5.0~1-40c7]:main():build-tree.cc:185) Saw no stats for following phones: 2 3 4 5 6 7 8 9 10 14 22 26 30 31 34 38 39 42 50 54 62 66 67 70 74 78 82 90 91 94 98 102 106 107 110 118 120 122 124 126 131 134 146 148 150 154 155 158 160 164 166 167 170 171 172 174 176 178 180 186 187 190 194 196 198 202 204 206 210 216 218 219 220 222 
+LOG (build-tree[5.5.0~1-40c7]:main():build-tree.cc:189) Wrote tree
+# Accounting: time=5 threads=1
+# Ended (code 0) at Mon Jul 12 19:52:13 UTC 2021, elapsed time 5 seconds
