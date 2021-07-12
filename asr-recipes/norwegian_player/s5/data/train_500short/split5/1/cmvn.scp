@@ -1,0 +1,8 @@
+no10x050 /opt/kaldi/egs/norwegian_player/s5/mfcc/cmvn_train.ark:505
+no10x107 /opt/kaldi/egs/norwegian_player/s5/mfcc/cmvn_train.ark:1249
+no10x119 /opt/kaldi/egs/norwegian_player/s5/mfcc/cmvn_train.ark:1497
+no10x171 /opt/kaldi/egs/norwegian_player/s5/mfcc/cmvn_train.ark:1993
+no10x205 /opt/kaldi/egs/norwegian_player/s5/mfcc/cmvn_train.ark:2489
+no10x236 /opt/kaldi/egs/norwegian_player/s5/mfcc/cmvn_train.ark:2985
+no10x291 /opt/kaldi/egs/norwegian_player/s5/mfcc/cmvn_train.ark:3481
+no10x410 /opt/kaldi/egs/norwegian_player/s5/mfcc/cmvn_train.ark:4969
