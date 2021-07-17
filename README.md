@@ -64,44 +64,56 @@ MEAN OPINION SCORES
 
 Demo Versions
 
-Blder		      Vasia		Vasiliki	Kostis
-Naturalness	  1		    1		      1.5
-Integrity	    1.5		  2		      1
+| Blade Runner | Vasia |	Vasiliki	| Kostis
+|---|---|---|---|
+| Naturalness	 | 1		   |   1	     |   1.5
+Integrity	     | 1.5		 |   2		    |    1
 
-Star Trek	    Vasia		Vasiliki	Kostis
-Naturalness	  1		    1		      2
-Integrity	    1   		1.5   		1
+| Star Trek	   | Vasia	|	Vasiliki	| Kostis
+|---|---|---|---|
+| Naturalness	 |  1		  |   1		    |   2
+| Integrity	   |  1   	| 	1.5   		|   1
 
-I, Robot	    Vasia		Vasiliki	Kostis
-Naturalness	  0.5	  	1   		  1.5
-Integrity	    0.5 		1		      1
+| I, Robot	    | Vasia	| Vasiliki	| Kostis
+|---|---|---|---|
+| Naturalness	 |  0.5	 |  	1   		 |  1.5
+| Integrity	   |  0.5 	| 	 1		    |  1
 
-Star Wars	    Vasia		Vasiliki	Kostis
-Naturalness	  2.5 		1.5   		1
-Integrity	    2	    	2	      	1.5
+| Star Wars	   | Vasia	| Vasiliki	| Kostis
+|---|---|---|---|
+| Naturalness	 |  2.5 	| 	1.5   		|  1
+| Integrity	   |  2	   |  	2	     |  1.5
 
-Westworld	    Vasia		Vasiliki	Kostis
-Naturalness	  1	    	1	      	2
-Integrity	    1	    	1.5	    	2
+| Westworld |	Vasia	|	Vasiliki |	Kostis
+|---|---|---|---|
+Naturalness	| 1	|	1	|	2
+Integrity	| 1	|	1.5	|	2
+
 
 Full Versions
 
-Blder   	  	Vasia		Vasiliki	Kostis
-Naturalness	  4	    	4	      	4
-Integrity	    4	  	  4.5	    	4
+| Blder |	Vasia	|	Vasiliki |	Kostis
+|---|---|---|---|
+Naturalness	| 4	|	4	|	4
+Integrity	| 4	|	4.5	|	4
 
-Star Trek	    Vasia		Vasiliki	Kostis
-Naturalness	  3.5	  	3.5	    	4
-Integrity	    4   		3.5   		3
+| Star Trek |	Vasia	|	Vasiliki |	Kostis
+|---|---|---|---|
+Naturalness	| 3.5	|	3.5	|	4
+Integrity	| 4	|	3.5	|	3
 
-I, Robot	    Vasia		Vasiliki	Kostis
-Naturalness	  3.5 		3     		3
-Integrity	    3.5 		3	      	3.5
+| I, Robot |	Vasia	|	Vasiliki |	Kostis
+|---|---|---|---|
+Naturalness	| 3.5	|	3	|	3
+Integrity	| 3.5	|	3	|	3.5
 
-Star Wars   	Vasia		Vasiliki	Kostis
-Naturalness	  5	    	4.5   		4
-Integrity	    5	    	5     		4
+| Star Wars |	Vasia	|	Vasiliki |	Kostis
+|---|---|---|---|
+Naturalness	| 5	|	4.5	|	4
+Integrity	| 5	|	5	|	4
 
-Westworld	    Vasia		Vasiliki	Kostis
-Naturalness	  4	    	4     		4
-Integrity	    4	    	5	      	5
+
+| Westworld |	Vasia	|	Vasiliki |	Kostis
+|---|---|---|---|
+Naturalness	| 4	|	4	|	4
+Integrity	| 4	|	5	|	5
